@@ -6,7 +6,7 @@ Summary(pl):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
 %define tarname ncurses-ruby
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
