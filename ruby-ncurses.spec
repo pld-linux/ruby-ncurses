@@ -17,21 +17,24 @@ Requires:	ruby
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This ruby extension makes most functions, constants, and external variables of
-the C library ncurses accessible from the Ruby programming language.
+This ruby extension makes most functions, constants, and external
+variables of the C library ncurses accessible from the Ruby
+programming language.
 
-All C functions are wrapped by module functions of a the module "Ncurses", with
-exactly the same name. Additionally, C functions expecting a WINDOW* as their
-first argument can also be called as methods of the "Ncurses::WINDOW" class. 
+All C functions are wrapped by module functions of a the module
+"Ncurses", with exactly the same name. Additionally, C functions
+expecting a WINDOW* as their first argument can also be called as
+methods of the "Ncurses::WINDOW" class. 
 
 %description -l pl
-Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ fukcji, sta³ych i
-zewnêtrznych zmiennych biblioteki ncurses z poziomu jêzyka Ruby.
+Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ fukcji,
+sta³ych i zewnêtrznych zmiennych biblioteki ncurses z poziomu jêzyka
+Ruby.
 
-Wszystkie fukcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod dok³adnie
-tymi samymi nazwami. Dodatkowo funkcje, które spodziewaj± sie mieæ WINDOW* jako
-ich pierwszy argument mog± byæ tak¿e wywo³ywane jako metody klasy
-"Ncurses::WINDOW".
+Wszystkie fukcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod
+dok³adnie tymi samymi nazwami. Dodatkowo funkcje, które spodziewaj±
+siê mieæ WINDOW* jako ich pierwszy argument mog± byæ tak¿e wywo³ywane
+jako metody klasy "Ncurses::WINDOW".
 
 %prep
 %setup -q -n %{tarname}-%{version}
@@ -61,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README rdoc
 %{ruby_rubylibdir}/*.rb
-%{ruby_archdir}/*.so
+%attr(755,root,root) %{ruby_archdir}/*.so
 %{ruby_ridir}/Ncurses
