@@ -27,11 +27,11 @@ expecting a WINDOW* as their first argument can also be called as
 methods of the "Ncurses::WINDOW" class. 
 
 %description -l pl
-Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ fukcji,
+Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ funkcji,
 sta³ych i zewnêtrznych zmiennych biblioteki ncurses z poziomu jêzyka
 Ruby.
 
-Wszystkie fukcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod
+Wszystkie funkcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod
 dok³adnie tymi samymi nazwami. Dodatkowo funkcje, które spodziewaj±
 siê mieæ WINDOW* jako ich pierwszy argument mog± byæ tak¿e wywo³ywane
 jako metody klasy "Ncurses::WINDOW".
