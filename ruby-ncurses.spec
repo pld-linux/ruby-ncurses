@@ -26,11 +26,12 @@ first argument can also be called as methods of the "Ncurses::WINDOW" class.
 
 %description -l pl
 Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ fukcji, sta³ych i
-zewnêtrznych zmiennych z biblioteki ncurses z poziomu jêzyka Ruby.
+zewnêtrznych zmiennych biblioteki ncurses z poziomu jêzyka Ruby.
 
 Wszystkie fukcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod dok³adnie
-t± sam± nazw±. Dodatkowo funkcje, które spodziewaj± sie mieæ WINDOW* jako ich
-pierwszy argument mog± byæ tak¿e wywo³ywane jako metody klasy "Ncurses::WINDOW"
+tymi samymi nazwami. Dodatkowo funkcje, które spodziewaj± sie mieæ WINDOW* jako
+ich pierwszy argument mog± byæ tak¿e wywo³ywane jako metody klasy
+"Ncurses::WINDOW".
 
 %prep
 %setup -q -n %{tarname}-%{version}
