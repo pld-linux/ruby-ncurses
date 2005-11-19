@@ -1,10 +1,7 @@
-%define	ruby_rubylibdir	%(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
-%define	ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
-%define	ruby_ridir	%(ruby -r rbconfig -e 'include Config; print File.join(CONFIG["datadir"], "ri", CONFIG["ruby_version"], "system")')
+%define tarname ncurses-ruby
 Summary:	Ruby interface to Ncurses
 Summary(pl):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
-%define tarname ncurses-ruby
 Version:	0.9.1
 Release:	2
 License:	Ruby-alike
@@ -12,6 +9,7 @@ Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
 # Source0-md5:	cb99721b492995bb3548b700b6e86fe2
 URL:		http://ncurses-ruby.berlios.de/
+BuildRequires:	rpmbuild(macros) >= 1.263
 BuildRequires:	ruby
 Requires:	ruby
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,7 +22,7 @@ programming language.
 All C functions are wrapped by module functions of a the module
 "Ncurses", with exactly the same name. Additionally, C functions
 expecting a WINDOW* as their first argument can also be called as
-methods of the "Ncurses::WINDOW" class. 
+methods of the "Ncurses::WINDOW" class.
 
 %description -l pl
 Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ funkcji,
