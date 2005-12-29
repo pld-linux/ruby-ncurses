@@ -9,9 +9,9 @@ Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
 # Source0-md5:	cb99721b492995bb3548b700b6e86fe2
 URL:		http://ncurses-ruby.berlios.de/
-BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
-Requires:	ruby-modules
+%ruby_mod_ver_requires_eq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
