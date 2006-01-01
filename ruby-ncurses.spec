@@ -3,14 +3,14 @@ Summary:	Ruby interface to Ncurses
 Summary(pl):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
 Version:	0.9.1
-Release:	3
+Release:	4
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
 # Source0-md5:	cb99721b492995bb3548b700b6e86fe2
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	rpmbuild(macros) >= 1.277
-BuildRequires:	ruby-modules
+BuildRequires:	ruby-devel >= 1:1.8.4-5
 %{?ruby_mod_ver_requires_eq}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
