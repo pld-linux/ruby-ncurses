@@ -1,6 +1,6 @@
 %define tarname ncurses-ruby
 Summary:	Ruby interface to Ncurses
-Summary(pl):	Interfejs Ncurses dla Ruby
+Summary(pl.UTF-8):   Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
 Version:	0.9.1
 Release:	4
@@ -24,14 +24,14 @@ All C functions are wrapped by module functions of a the module
 expecting a WINDOW* as their first argument can also be called as
 methods of the "Ncurses::WINDOW" class.
 
-%description -l pl
-Rozszerzenie do ruby, które umo¿liwia dostêp do wiêkszo¶æ funkcji,
-sta³ych i zewnêtrznych zmiennych biblioteki ncurses z poziomu jêzyka
+%description -l pl.UTF-8
+Rozszerzenie do ruby, ktÃ³re umoÅ¼liwia dostÄ™p do wiÄ™kszoÅ›Ä‡ funkcji,
+staÅ‚ych i zewnÄ™trznych zmiennych biblioteki ncurses z poziomu jÄ™zyka
 Ruby.
 
-Wszystkie funkcje C s± dostêpne poprzez funkcje modu³u "Ncurses" pod
-dok³adnie tymi samymi nazwami. Dodatkowo funkcje, które spodziewaj±
-siê mieæ WINDOW* jako ich pierwszy argument mog± byæ tak¿e wywo³ywane
+Wszystkie funkcje C sÄ… dostÄ™pne poprzez funkcje moduÅ‚u "Ncurses" pod
+dokÅ‚adnie tymi samymi nazwami. Dodatkowo funkcje, ktÃ³re spodziewajÄ…
+siÄ™ mieÄ‡ WINDOW* jako ich pierwszy argument mogÄ… byÄ‡ takÅ¼e wywoÅ‚ywane
 jako metody klasy "Ncurses::WINDOW".
 
 %prep
