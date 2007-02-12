@@ -1,6 +1,6 @@
 %define tarname ncurses-ruby
 Summary:	Ruby interface to Ncurses
-Summary(pl.UTF-8):   Interfejs Ncurses dla Ruby
+Summary(pl.UTF-8):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
 Version:	0.9.1
 Release:	4
