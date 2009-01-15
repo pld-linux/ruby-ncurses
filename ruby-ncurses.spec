@@ -3,11 +3,12 @@ Summary:	Ruby interface to Ncurses
 Summary(pl.UTF-8):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
 Version:	0.9.1
-Release:	5
+Release:	6
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
 # Source0-md5:	cb99721b492995bb3548b700b6e86fe2
+Patch0:		%{name}-utf8.patch
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel >= 1:1.8.4-5
@@ -36,6 +37,8 @@ jako metody klasy "Ncurses::WINDOW".
 
 %prep
 %setup -q -n %{tarname}-%{version}
+%patch0 -p1
+%{__sed} -i "s@curses.h@ncursesw/curses.h@" ncurses_wrap.h
 
 %build
 ruby extconf.rb
