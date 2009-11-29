@@ -2,12 +2,12 @@
 Summary:	Ruby interface to Ncurses
 Summary(pl.UTF-8):	Interfejs Ncurses dla Ruby
 Name:		ruby-Ncurses
-Version:	0.9.1
-Release:	7
+Version:	1.2.4
+Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
-# Source0-md5:	cb99721b492995bb3548b700b6e86fe2
+# Source0-md5:	8a3e0ed33ac245241b6afd911520c205
 Patch0:		%{name}-utf8.patch
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	rpmbuild(macros) >= 1.277
@@ -38,14 +38,13 @@ jako metody klasy "Ncurses::WINDOW".
 %prep
 %setup -q -n %{tarname}-%{version}
 %patch0 -p1
-%{__sed} -i "s@curses.h@ncursesw/curses.h@" ncurses_wrap.h
 
 %build
 ruby extconf.rb
 
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -fPIC"
+	CFLAGS="%{rpmcflags} -I/usr/include/ncursesw -fPIC"
 
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
@@ -54,9 +53,12 @@ rdoc --op rdoc lib
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir},%{ruby_archdir}}
 
-cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+#cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
-install ncurses.so $RPM_BUILD_ROOT%{ruby_archdir}
+#install ncurses.so $RPM_BUILD_ROOT%{ruby_archdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,6 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README rdoc
-%{ruby_rubylibdir}/*.rb
-%attr(755,root,root) %{ruby_archdir}/*.so
+%{ruby_sitelibdir}/*.rb
+%attr(755,root,root) %{ruby_sitearchdir}/*.so
 %{ruby_ridir}/Ncurses
