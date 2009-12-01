@@ -51,14 +51,12 @@ rdoc --op rdoc lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir},%{ruby_archdir}}
+install -d $RPM_BUILD_ROOT%{ruby_ridir}
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
-#install ncurses.so $RPM_BUILD_ROOT%{ruby_archdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
