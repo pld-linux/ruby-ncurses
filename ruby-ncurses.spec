@@ -1,18 +1,19 @@
-%define tarname ncurses-ruby
+%define pkgname ncurses
 Summary:	Ruby interface to Ncurses
 Summary(pl.UTF-8):	Interfejs Ncurses dla Ruby
-Name:		ruby-Ncurses
+Name:		ruby-%{pkgname}
 Version:	1.2.4
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://download.berlios.de/%{tarname}/%{tarname}-%{version}.tar.bz2
+Source0:	http://download.berlios.de/ncurses-ruby/%{pkgname}-ruby-%{version}.tar.bz2
 # Source0-md5:	8a3e0ed33ac245241b6afd911520c205
 Patch0:		%{name}-utf8.patch
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel >= 1:1.8.4-5
 %{?ruby_mod_ver_requires_eq}
+Obsoletes:	ruby-Ncurses
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,7 +37,7 @@ się mieć WINDOW* jako ich pierwszy argument mogą być także wywoływane
 jako metody klasy "Ncurses::WINDOW".
 
 %prep
-%setup -q -n %{tarname}-%{version}
+%setup -q -n %{pkgname}-ruby-%{version}
 %patch0 -p1
 
 %build
