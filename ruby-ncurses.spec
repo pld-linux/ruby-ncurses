@@ -10,11 +10,12 @@ Source0:	http://download.berlios.de/ncurses-ruby/%{pkgname}-ruby-%{version}.tar.
 # Source0-md5:	8a3e0ed33ac245241b6afd911520c205
 Patch0:		%{name}-utf8.patch
 URL:		http://ncurses-ruby.berlios.de/
+BuildRequires:	ncurses-devel
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-devel >= 1:1.8.4-5
 %{?ruby_mod_ver_requires_eq}
-Obsoletes:	ruby-Ncurses
 Provides:	ruby-Ncurses
+Obsoletes:	ruby-Ncurses
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
