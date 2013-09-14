@@ -9,11 +9,11 @@ Group:		Development/Languages
 Source0:	http://download.berlios.de/ncurses-ruby/%{pkgname}-ruby-%{version}.tar.bz2
 # Source0-md5:	63fd3d09a51cdd745e1ed37f85621ea2
 Patch0:		%{name}-utf8.patch
+Patch1:		format-security.patch
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	ncurses-devel
-BuildRequires:	rpmbuild(macros) >= 1.277
-BuildRequires:	ruby-devel >= 1:1.8.4-5
-%{?ruby_mod_ver_requires_eq}
+BuildRequires:	rpm-rubyprov
+BuildRequires:	rpmbuild(macros) >= 1.665
 Provides:	ruby-Ncurses
 Obsoletes:	ruby-Ncurses
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,6 +65,7 @@ Dokumentacji w formacie ri dla %{pkgname}.
 %prep
 %setup -q -n %{pkgname}-ruby-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 ruby extconf.rb \
