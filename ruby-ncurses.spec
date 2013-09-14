@@ -14,6 +14,7 @@ URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
+BuildRequires:	ruby-devel
 Provides:	ruby-Ncurses
 Obsoletes:	ruby-Ncurses
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
