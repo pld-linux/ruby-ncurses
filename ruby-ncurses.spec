@@ -2,12 +2,12 @@
 Summary:	Ruby interface to Ncurses
 Summary(pl.UTF-8):	Interfejs Ncurses dla Ruby
 Name:		ruby-%{pkgname}
-Version:	1.2.4
+Version:	1.3.1
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://download.berlios.de/ncurses-ruby/%{pkgname}-ruby-%{version}.tar.bz2
-# Source0-md5:	8a3e0ed33ac245241b6afd911520c205
+# Source0-md5:	63fd3d09a51cdd745e1ed37f85621ea2
 Patch0:		%{name}-utf8.patch
 URL:		http://ncurses-ruby.berlios.de/
 BuildRequires:	ncurses-devel
@@ -67,7 +67,8 @@ Dokumentacji w formacie ri dla %{pkgname}.
 %patch0 -p1
 
 %build
-ruby extconf.rb
+ruby extconf.rb \
+	--vendor
 
 %{__make} \
 	CC="%{__cc}" \
@@ -75,7 +76,8 @@ ruby extconf.rb
 
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-rm -f ri/created.rid
+rm ri/created.rid
+rm ri/cache.ri
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -93,8 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{ruby_sitelibdir}/*.rb
-%attr(755,root,root) %{ruby_sitearchdir}/*.so
+%{ruby_vendorlibdir}/ncurses.rb
+%{ruby_vendorlibdir}/ncurses_sugar.rb
+%attr(755,root,root) %{ruby_vendorarchdir}/ncurses_bin.so
 
 %files rdoc
 %defattr(644,root,root,755)
