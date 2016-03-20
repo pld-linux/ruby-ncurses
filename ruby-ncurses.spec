@@ -6,11 +6,11 @@ Version:	1.3.1
 Release:	3
 License:	Ruby-alike
 Group:		Development/Languages
-Source0:	http://download.berlios.de/ncurses-ruby/%{pkgname}-ruby-%{version}.tar.bz2
+Source0:	https://sourceforge.net/projects/ncurses-ruby.berlios/files/%{pkgname}-ruby-%{version}.tar.bz2
 # Source0-md5:	63fd3d09a51cdd745e1ed37f85621ea2
 Patch0:		%{name}-utf8.patch
 Patch1:		format-security.patch
-URL:		http://ncurses-ruby.berlios.de/
+URL:		https://sourceforge.net/projects/ncurses-ruby.berlios/
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
