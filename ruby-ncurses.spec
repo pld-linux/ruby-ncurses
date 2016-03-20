@@ -10,6 +10,7 @@ Source0:	https://sourceforge.net/projects/ncurses-ruby.berlios/files/%{pkgname}-
 # Source0-md5:	63fd3d09a51cdd745e1ed37f85621ea2
 Patch0:		%{name}-utf8.patch
 Patch1:		format-security.patch
+Patch2:		ruby-ncurses-fix-missing-tz-prototypes.patch
 URL:		https://sourceforge.net/projects/ncurses-ruby.berlios/
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-rubyprov
@@ -67,6 +68,7 @@ Dokumentacji w formacie ri dla %{pkgname}.
 %setup -q -n %{pkgname}-ruby-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 ruby extconf.rb \
